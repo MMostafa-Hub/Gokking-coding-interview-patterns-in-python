@@ -1,1 +1,1 @@
-# Gokking-coding-interview-patterns-in-python
+# grokking-coding-interview-patterns-in-python
