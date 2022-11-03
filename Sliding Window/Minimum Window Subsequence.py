@@ -29,8 +29,8 @@ def min_window(s1: str, s2: str) -> str:
         s2 = b, d, e
     
     """
-    s2_i = 0
-    for s1_i, _ in enumerate(s1):
+    s2_i, s1_i = 0, 0
+    while s1_i < len(s1):
         # increment s2_i as s2[s2_i] == s1[s1_i] 
         if s2[s2_i] == s1[s1_i]: 
             s2_i += 1
@@ -54,7 +54,9 @@ def min_window(s1: str, s2: str) -> str:
                 
                 # initialize s2_i 
                 s2_i = 0
-                
+                # start searching for a new sequence after start pointer
+                s1_i = start + 1
+        s1_i += 1
     return min_sub_sequence
 
 # Driver code
@@ -62,8 +64,7 @@ def main():
     str1 = ["abcdebdde", "fgrqsqsnodwmxzkzxwqegkndaa",
             "qwewerrty", "aaabbcbq", "zxcvnhss", "alpha",
             "beta", "asd", "abcd"]
-    str2 = ["bde", "kzed", "werty", "abc", "css", "la", "ab", "as", "pp"]
-
+    str2 = ["bde", "kzed", "werty", "abc", "css", "la", "ab", "as", "pp", "quitwlnicl"]
     for i in range(len(str1)):
         print(i+1, ". \tInput string: (" + str1[i]+", " + str2[i]+")", sep="")
         print("\tSubsequence string: ", min_window(str1[i], str2[i]))
