@@ -22,8 +22,6 @@ output = 10
 
 """
 
-from collections import deque
-
 
 def find_longest_substring(input_string: str) -> int:
     if not input_string:
